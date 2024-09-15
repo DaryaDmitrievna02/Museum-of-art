@@ -1,0 +1,15 @@
+.bookmark {
+    background-color: #f9f9f9;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+}
+
+.bookmarkActive {
+    background-color: #fbd7b24d;
+}
+
+.icon {
+    width: 25px !important;
+    height: 25px !important;
+}

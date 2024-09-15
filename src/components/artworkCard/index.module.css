@@ -1,0 +1,66 @@
+.container {
+    border: 1px solid #f0f1f1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 24px;
+    width: 100%;
+    margin: 0 auto;
+    height: 135px;
+
+    background-color: white;
+    width: 100%;
+}
+
+.containerWithInner {
+    padding: 20px 10px;
+    max-width: 100%;
+}
+
+.container > div > img:first-child {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.artist {
+    color: #f17900;
+    overflow: hidden;
+    max-width: 200px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.about {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.h3 {
+    overflow: hidden;
+    max-width: 200px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+@media (max-width: 1470px) {
+    .h3,
+    .artist {
+        max-width: 150px;
+    }
+}
+
+@media (max-width: 750px) {
+    .h3,
+    .artist {
+        max-width: 250px;
+    }
+}
+
+@media (max-width: 470px) {
+    .h3,
+    .artist {
+        max-width: 150px;
+    }
+}

@@ -1,0 +1,44 @@
+.title {
+    margin: auto;
+    text-align: center;
+}
+
+.title span {
+    text-decoration: underline;
+}
+
+.titleText {
+    font-weight: 700;
+    font-size: 64px;
+    text-align: center;
+    margin: 120px 0 70px 0;
+}
+
+@media (max-width: 768px) {
+    .titleText {
+        font-size: 50px;
+    }
+}
+
+.highlight {
+    color: #f17900;
+    font-weight: bold;
+}
+
+.here {
+    display: block;
+    text-align: center;
+    font-weight: bold;
+}
+
+.favorites {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.favorites img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}

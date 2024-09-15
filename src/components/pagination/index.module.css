@@ -1,0 +1,22 @@
+.prev::after {
+    content: "<";
+    font-weight: bold;
+}
+
+.next::after {
+    content: ">";
+    font-weight: bold;
+}
+
+.pageNumber {
+    margin: 2px;
+    padding: 5px;
+    width: 30px;
+    cursor: pointer;
+}
+
+.active {
+    background-color: #f17900;
+    color: white;
+    border-radius: 5px;
+}

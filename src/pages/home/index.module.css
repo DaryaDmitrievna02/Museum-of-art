@@ -1,0 +1,45 @@
+.title {
+    font-weight: 700;
+    font-size: 64px;
+    text-align: center;
+    margin: 120px 0 70px 0;
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 50px;
+    }
+}
+
+.secondTitle {
+    text-align: center;
+    margin: 120px 0 0px 0;
+    text-align: center;
+}
+
+.secondTitle span:first-child {
+    color: #f17900;
+    font-size: 16px;
+}
+
+.secondTitle span:last-child {
+    font-size: 32px;
+}
+
+.highlight {
+    color: #f17900;
+    font-weight: bold;
+}
+
+.here {
+    display: block;
+    text-align: center;
+    font-weight: bold;
+}
+
+.pagination {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 10px;
+}
