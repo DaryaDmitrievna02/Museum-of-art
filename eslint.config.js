@@ -12,7 +12,10 @@ export default tseslint.config(
       globals: globals.browser,
     },
     plugins: ["react"],
-    rules: {},
+    rules: {
+      "no-unused-vars": "warn",
+      "no-undef": "warn",
+    },
   },
 );
 
