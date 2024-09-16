@@ -3,7 +3,7 @@ import "@testing-library/jest-dom";
 import { SearchForm } from "./index";
 
 describe("SearchForm", () => {
-  it("должен отображать переданное значение query", () => {
+  it("should display the passed value", () => {
     const mockSetQuery = jest.fn();
     const query = "Picasso";
 
@@ -13,7 +13,7 @@ describe("SearchForm", () => {
     expect(input).toHaveValue(query);
   });
 
-  it("должен вызывать setQuery при изменении значения в input", () => {
+  it("should call setQuery when the value in input changes", () => {
     const mockSetQuery = jest.fn();
     const query = "Picasso";
 
@@ -24,3 +24,4 @@ describe("SearchForm", () => {
     expect(mockSetQuery).toHaveBeenCalledWith("Van Gogh");
   });
 });
+
