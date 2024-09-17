@@ -1,11 +1,11 @@
 .prev::after {
     content: "<";
-    font-weight: bold;
+    font-weight: var(--font-weight-bold);
 }
 
 .next::after {
     content: ">";
-    font-weight: bold;
+    font-weight: var(--font-weight-bold);
 }
 
 .pageNumber {
@@ -16,7 +16,7 @@
 }
 
 .active {
-    background-color: #f17900;
-    color: white;
+    background-color: var(--primary-color);
+    color: var(--text-color-reverse);
     border-radius: 5px;
 }

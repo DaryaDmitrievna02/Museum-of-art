@@ -1,24 +1,29 @@
-@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap");
-
-* {
-  padding: 0px;
-  margin: 0px;
-  border: none;
-
-  font-family: "Lexend Deca", sans-serif;
-  font-weight: 300;
-  font-style: normal;
-  color: #393939;
-}
+@import "./theme.css";
 
 *,
 *::before,
 *::after {
+  margin: 0;
+  padding: 0;
+  border: none;
   box-sizing: border-box;
+  font-family: var(--font-family);
+  font-weight: var(--font-weight);
+  font-style: normal;
+  color: var(--text-color);
+}
+
+html,
+body {
+  height: 100%;
+  background-color: var(--background-color);
+}
+
+#root {
+  height: 100%;
 }
 
 /* Links */
-
 a,
 a:link,
 a:visited {
@@ -30,17 +35,7 @@ a:hover {
   text-decoration: none;
 }
 
-#root {
-  height: 100%;
-}
-
-html,
-body {
-  height: 100%;
-  background-color: #fafafa;
-}
-/* Common */
-
+/* Common Elements */
 aside,
 nav,
 footer,
@@ -55,32 +50,22 @@ ul li {
   list-style: none;
 }
 
-img {
-  vertical-align: top;
-  -webkit-tap-highlight-color: transparent;
-}
-
 img,
 svg {
   max-width: 100%;
   height: auto;
+  vertical-align: top;
 }
 
-address {
-  font-style: normal;
-}
-
-/* Form */
-
+/* Form Elements */
 input,
 textarea,
 button,
 select {
-  font-family: "Lexend Deca", sans-serif;
+  font-family: inherit;
   font-size: inherit;
   color: inherit;
-  background-color: transparent;
-
+  background: transparent;
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -92,11 +77,8 @@ button,
 input[type="submit"] {
   display: inline-block;
   box-shadow: none;
-  background-color: transparent;
   background: none;
   cursor: pointer;
-
-  -webkit-tap-highlight-color: transparent;
 }
 
 input:focus,

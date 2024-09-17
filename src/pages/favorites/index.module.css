@@ -8,27 +8,27 @@
 }
 
 .titleText {
-    font-weight: 700;
-    font-size: 64px;
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-large);
     text-align: center;
     margin: 120px 0 70px 0;
 }
 
 @media (max-width: 768px) {
     .titleText {
-        font-size: 50px;
+        font-size: var(--font-size-medium);
     }
 }
 
 .highlight {
-    color: #f17900;
-    font-weight: bold;
+    color: var(--primary-color);
+    font-weight: var(--font-weight-bold);
 }
 
 .here {
     display: block;
     text-align: center;
-    font-weight: bold;
+    font-weight: var(--font-weight-bold);
 }
 
 .favorites {

@@ -12,11 +12,10 @@
 
 .message {
     text-align: center;
-    font-size: 20px;
 }
 
 .link {
     cursor: pointer;
     text-decoration: underline;
-    font-weight: 500;
+    font-weight: var(--font-weight-bold);
 }

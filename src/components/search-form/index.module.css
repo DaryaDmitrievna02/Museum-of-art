@@ -2,10 +2,10 @@
     padding: 16px;
     width: 762px;
     border-radius: 16px;
-    background-color: #3939390d;
+    background-color: var(--input-color);
     display: flex;
     justify-content: space-between;
-    gap: 0.5em;
+    gap: 10px;
     align-items: center;
 
     margin: 20px 0;

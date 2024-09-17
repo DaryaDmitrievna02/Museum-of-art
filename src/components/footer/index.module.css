@@ -4,7 +4,7 @@
     align-items: center;
     justify-content: center;
 
-    background-color: white;
+    background-color: var(--footer-background-color);
 }
 
 .container {
