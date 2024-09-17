@@ -29,7 +29,11 @@ export const Topic = () => {
       <CardsLayout>
         {results?.data.map(result => {
           return (
-            <ImgWithDescription key={result.id} props={result.image_id || ""}>
+            <ImgWithDescription
+              key={result.id}
+              id={result.id}
+              props={result.image_id || ""}
+            >
               <ArtworkCard
                 key={result.id}
                 id={result.id}
@@ -54,4 +58,3 @@ export const Topic = () => {
     </>
   );
 };
-
