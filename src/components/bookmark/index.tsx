@@ -1,7 +1,7 @@
 import styles from "./index.module.css";
 import bookmark from "../../assets/bookmark.svg";
 import { getSessionStorage } from "../../utils/sessionStorage/getSessionStorage";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 type Props = {
   id: number;
@@ -42,3 +42,4 @@ export const Bookmark = ({ id }: Props) => {
     </button>
   );
 };
+

@@ -4,7 +4,6 @@ import "@testing-library/jest-dom";
 import { getFavorites } from "../../utils/getFavorites";
 import { getSessionStorage } from "../../utils/sessionStorage/getSessionStorage";
 import { MemoryRouter } from "react-router-dom";
-import { Pagination } from "../../components/pagination";
 
 jest.mock("../../utils/getFavorites");
 jest.mock("../../utils/sessionStorage/getSessionStorage");
@@ -62,3 +61,4 @@ describe("Favorites Component", () => {
     });
   });
 });
+

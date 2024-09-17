@@ -1,21 +1,29 @@
-import js from "@eslint/js";
 import globals from "globals";
+import pluginJs from "@eslint/js";
 import tseslint from "typescript-eslint";
+import pluginReact from "eslint-plugin-react";
 
-export default tseslint.config(
-  { ignores: ["dist"] },
+export default [
+  { files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"] },
+  { languageOptions: { globals: globals.browser } },
+  pluginJs.configs.recommended,
+  ...tseslint.configs.recommended,
+  pluginReact.configs.flat.recommended,
   {
-    extends: [js.configs.recommended, ...tseslint.configs.recommended],
-    files: ["**/*.{ts,tsx}"],
-    languageOptions: {
-      ecmaVersion: "latest",
-      globals: globals.browser,
-    },
-    plugins: ["react"],
     rules: {
-      "no-unused-vars": "warn",
-      "no-undef": "warn",
+      "react/react-in-jsx-scope": "off",
+      "react/no-unescaped-entities": 0,
     },
   },
-);
+
+  {
+    ignores: [
+      "!node_modules/",
+      "node_modules/*",
+      "!node_modules/mylibrary/",
+      "dist/**/*",
+      "**/__mocks__",
+    ],
+  },
+];
 
