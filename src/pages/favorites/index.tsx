@@ -30,20 +30,17 @@ export const Favorites = () => {
   }, [storage]);
 
   useEffect(() => {
-    const updateFavorites = () => {
-      setLoading(true);
-      const IDs = getSessionStorage().join(",");
-      getFavorites(IDs)
-        .then(result => {
-          setFavorites(result);
-        })
-        .catch(err => {
-          console.error(err.message);
-          navigate(Paths.notFound);
-        })
-        .finally(() => {
-          setLoading(false);
-        });
+    const updateFavorites = async () => {
+      try {
+        const IDs = getSessionStorage().join(",");
+        setLoading(true);
+        const result = await getFavorites<Artworks>(IDs);
+        setFavorites(result);
+      } catch {
+        navigate(Paths.notFound);
+      } finally {
+        setLoading(false);
+      }
     };
 
     window.addEventListener("bookmarks-updated", () =>

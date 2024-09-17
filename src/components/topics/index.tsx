@@ -11,10 +11,17 @@ export const Topic = () => {
   const [results, setResults] = useState<Artworks>();
   const [currentPage, setCurrentPage] = useState<number>(1);
 
-  useEffect(() => {
-    getResult("", currentPage, 3).then(result => {
+  const fetchResults = async (query: string, currentPage: number) => {
+    try {
+      const result = await getResult("", currentPage, 3);
       setResults(result);
-    });
+    } catch {
+      setResults(undefined);
+    }
+  };
+
+  useEffect(() => {
+    fetchResults("", currentPage);
   }, [currentPage]);
 
   return (

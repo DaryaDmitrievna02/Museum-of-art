@@ -1,15 +1,20 @@
 import { Artworks } from "../utils/types";
 
-export const getFavorites = async (IDs: string): Promise<Artworks> => {
+export const getFavorites = async <T>(IDs: string): Promise<Artworks | T> => {
   try {
-    const res = await fetch(`https://api.artic.edu/api/v1/artworks?ids=${IDs}`);
-    const data = res.json();
+    const response = await fetch(
+      `https://api.artic.edu/api/v1/artworks?ids=${IDs}`,
+    );
+
+    if (!response.ok) {
+      throw new Error(`Error: ${response.status}`);
+    }
+
+    const data = await response.json();
     return data;
-  } catch {
-    return {
-      data: [],
-      pagination: { total: 0, total_pages: 0, current_page: 0 },
-    };
+  } catch (error) {
+    console.error("Fetch error:", error);
+    throw error;
   }
 };
 

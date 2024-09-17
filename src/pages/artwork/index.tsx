@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 import { getArtwork } from "../../api/getArtwotk";
 import { Bookmark } from "../../components/bookmark";
@@ -8,6 +8,7 @@ import { Layout } from "../../components/Layout";
 import { Loading } from "../../components/loading";
 import { NotFoundMessage } from "../../components/notFoundMessage";
 import { nationalities } from "../../constants/nationalities";
+import { Paths } from "../../constants/paths";
 import { Artwork } from "../../utils/types";
 import styles from "./index.module.css";
 
@@ -22,17 +23,19 @@ export const ArtworkDetails = () => {
   const [artwork, setArtwork] = useState<Artwork>();
   const [loading, setLoading] = useState<boolean>(true);
 
+  const navigate = useNavigate();
+
   useEffect(() => {
-    const fetchArtwork = () => {
-      if (id) {
+    const fetchArtwork = async () => {
+      try {
+        if (!id) return;
         setLoading(true);
-        getArtwork(id)
-          .then(result => {
-            setArtwork(result.data[0]);
-          })
-          .finally(() => {
-            setLoading(false);
-          });
+        const result = await getArtwork(id);
+        setArtwork(result.data[0]);
+      } catch {
+        navigate(Paths.notFound);
+      } finally {
+        setLoading(false);
       }
     };
 
@@ -45,7 +48,7 @@ export const ArtworkDetails = () => {
         {loading ? (
           <Loading />
         ) : !artwork ? (
-          <NotFoundMessage />
+          <NotFoundMessage error="" />
         ) : (
           <section className={styles.container}>
             <div className={styles.img_container}>
