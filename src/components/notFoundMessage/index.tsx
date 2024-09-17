@@ -1,6 +1,6 @@
+import { Paths } from "@constants/paths";
 import { useNavigate } from "react-router-dom";
 
-import { Paths } from "../../constants/paths";
 import styles from "./index.module.css";
 
 type Props = {
@@ -26,4 +26,3 @@ export const NotFoundMessage = ({ error = "" }: Props) => {
     </div>
   );
 };
-

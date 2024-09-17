@@ -1,7 +1,7 @@
+import { getResult } from "@api/getResult";
+import { Artworks } from "@utils/types";
 import { useEffect, useState } from "react";
 
-import { getResult } from "../../api/getResult";
-import { Artworks } from "../../utils/types";
 import { ArtworkCard } from "../artworkCard";
 import { CardsLayout } from "../cardsLayout";
 import { ImgWithDescription } from "../imgWithDescription";

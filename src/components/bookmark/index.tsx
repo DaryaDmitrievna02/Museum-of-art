@@ -1,7 +1,7 @@
+import bookmark from "@assets/bookmark.svg";
+import { getSessionStorage } from "@utils/sessionStorage/getSessionStorage";
 import { useState } from "react";
 
-import bookmark from "../../assets/bookmark.svg";
-import { getSessionStorage } from "../../utils/sessionStorage/getSessionStorage";
 import styles from "./index.module.css";
 
 type Props = {
@@ -43,4 +43,3 @@ export const Bookmark = ({ id }: Props) => {
     </button>
   );
 };
-

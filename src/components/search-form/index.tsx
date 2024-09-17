@@ -1,6 +1,6 @@
+import search from "@assets/search.svg";
 import React, { useState } from "react";
 
-import search from "../../assets/search.svg";
 import styles from "./index.module.css";
 
 type Props = {

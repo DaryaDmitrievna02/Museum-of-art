@@ -1,17 +1,17 @@
 import "@testing-library/jest-dom";
 
+import { Paths } from "@constants/paths";
 import { fireEvent, render, screen } from "@testing-library/react";
 import { useNavigate } from "react-router-dom";
 
-import { Paths } from "../../constants/paths";
 import { Footer } from "../footer/index";
 
 jest.mock("react-router-dom", () => ({
   useNavigate: jest.fn(),
 }));
 
-jest.mock("../../assets/museumLogo2.svg", () => "mockMuseumLogo");
-jest.mock("../../assets/modsenLogo.svg", () => "mockModsenLogo");
+jest.mock("@assets/museumLogo2.svg", () => "mockMuseumLogo");
+jest.mock("@assets/modsenLogo.svg", () => "mockModsenLogo");
 
 describe("Footer Component", () => {
   it("renders the footer and images correctly", () => {
@@ -37,4 +37,3 @@ describe("Footer Component", () => {
     expect(mockNavigate).toHaveBeenCalledWith(Paths.home);
   });
 });
-

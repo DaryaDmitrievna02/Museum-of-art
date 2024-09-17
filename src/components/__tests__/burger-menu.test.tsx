@@ -7,7 +7,7 @@ import { BurgerMenu } from "../burger-menu/index";
 
 const mockUseBurger = jest.fn();
 
-jest.mock("../../utils/customHooks/useBurger", () => ({
+jest.mock("@utils/customHooks/useBurger", () => ({
   useBurger: () => mockUseBurger(),
 }));
 describe("BurgerMenu Component", () => {

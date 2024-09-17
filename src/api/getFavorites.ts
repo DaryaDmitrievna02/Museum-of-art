@@ -1,4 +1,4 @@
-import { Artworks } from "../utils/types";
+import { Artworks } from "@utils/types";
 
 export const getFavorites = async <T>(IDs: string): Promise<Artworks | T> => {
   try {
@@ -17,4 +17,3 @@ export const getFavorites = async <T>(IDs: string): Promise<Artworks | T> => {
     throw error;
   }
 };
-

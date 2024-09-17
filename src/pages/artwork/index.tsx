@@ -1,15 +1,15 @@
+import { getArtwork } from "@api/getArtwotk";
+import { Bookmark } from "@components/bookmark";
+import { ImageHandler } from "@components/imageHandler";
+import { Layout } from "@components/Layout";
+import { Loading } from "@components/loading";
+import { NotFoundMessage } from "@components/notFoundMessage";
+import { nationalities } from "@constants/nationalities";
+import { Paths } from "@constants/paths";
+import { Artwork } from "@utils/types";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
-import { getArtwork } from "../../api/getArtwotk";
-import { Bookmark } from "../../components/bookmark";
-import { ImageHandler } from "../../components/imageHandler";
-import { Layout } from "../../components/Layout";
-import { Loading } from "../../components/loading";
-import { NotFoundMessage } from "../../components/notFoundMessage";
-import { nationalities } from "../../constants/nationalities";
-import { Paths } from "../../constants/paths";
-import { Artwork } from "../../utils/types";
 import styles from "./index.module.css";
 
 function getNationality(artist: string | undefined) {
@@ -95,4 +95,3 @@ export const ArtworkDetails = () => {
     </>
   );
 };
-

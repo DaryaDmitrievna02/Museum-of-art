@@ -1,17 +1,17 @@
 import "@testing-library/jest-dom";
 
+import { Paths } from "@constants/paths";
 import { fireEvent, render, screen } from "@testing-library/react";
 import { useNavigate } from "react-router-dom";
 
-import { Paths } from "../../constants/paths";
 import { Header } from "../Header/index";
 
 jest.mock("react-router-dom", () => ({
   useNavigate: jest.fn(),
 }));
 
-jest.mock("../../assets/museumLogo.svg", () => "mockLogo");
-jest.mock("../../assets/bookmark.svg", () => "mockBookmark");
+jest.mock("@assets/museumLogo.svg", () => "mockLogo");
+jest.mock("@assets/bookmark.svg", () => "mockBookmark");
 
 describe("Header Component", () => {
   it("renders Header", () => {
@@ -44,4 +44,3 @@ describe("Header Component", () => {
     expect(mockNavigate).toHaveBeenCalledWith(Paths.favorites);
   });
 });
-

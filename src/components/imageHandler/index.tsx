@@ -1,6 +1,6 @@
+import span from "@assets/span.svg";
 import { useEffect, useState } from "react";
 
-import span from "../../assets/span.svg";
 import { Loading } from "../loading";
 
 type Props = {
@@ -31,4 +31,3 @@ export const ImageHandler = ({ ImgID }: Props) => {
     </>
   );
 };
-

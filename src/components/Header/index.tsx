@@ -1,8 +1,8 @@
+import bookmark from "@assets/bookmark.svg";
+import logo from "@assets/museumLogo.svg";
+import { Paths } from "@constants/paths";
 import { useNavigate } from "react-router-dom";
 
-import bookmark from "../../assets/bookmark.svg";
-import logo from "../../assets/museumLogo.svg";
-import { Paths } from "../../constants/paths";
 import { BurgerMenu } from "../burger-menu";
 import styles from "./index.module.css";
 

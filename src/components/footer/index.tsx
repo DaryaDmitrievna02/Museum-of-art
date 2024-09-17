@@ -1,8 +1,8 @@
+import modsen from "@assets/modsenLogo.svg";
+import logo from "@assets/museumLogo2.svg";
+import { Paths } from "@constants/paths";
 import { useNavigate } from "react-router-dom";
 
-import modsen from "../../assets/modsenLogo.svg";
-import logo from "../../assets/museumLogo2.svg";
-import { Paths } from "../../constants/paths";
 import styles from "./index.module.css";
 
 export const Footer = () => {

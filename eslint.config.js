@@ -32,5 +32,18 @@ export default [
       "commitlint.config.js",
     ],
   },
+  {
+    settings: {
+      "import/resolver": {
+        alias: {
+          map: [
+            ["@", "./src"],
+            ["@components", "./src/components"],
+            ["@api", "./src/api"],
+          ],
+          extensions: [".ts", ".tsx", ".js", ".jsx"],
+        },
+      },
+    },
+  },
 ];
-

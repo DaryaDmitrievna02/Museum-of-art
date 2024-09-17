@@ -1,4 +1,4 @@
-import { Artworks } from "../utils/types";
+import { Artworks } from "@utils/types";
 
 export const getResult = async (
   search: string,
@@ -20,4 +20,3 @@ export const getResult = async (
     throw error;
   }
 };
-

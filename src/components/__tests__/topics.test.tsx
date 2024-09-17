@@ -1,9 +1,9 @@
 import "@testing-library/jest-dom";
 
+import { getResult } from "@api/getResult";
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 
-import { getResult } from "../../api/getResult";
 import { Topic } from "../topics/index";
 
 jest.mock("../../utils/getResult", () => ({
@@ -104,4 +104,3 @@ describe("Topic Component", () => {
     });
   });
 });
-

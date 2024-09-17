@@ -1,7 +1,7 @@
+import bookmark from "@assets/bookmark.svg";
+import { Paths } from "@constants/paths";
 import { useNavigate } from "react-router-dom";
 
-import bookmark from "../../assets/bookmark.svg";
-import { Paths } from "../../constants/paths";
 import { Bookmark } from "../bookmark";
 import { ImageHandler } from "../imageHandler";
 import styles from "./index.module.css";
@@ -46,4 +46,3 @@ export const ArtworkCard = ({
     </>
   );
 };
-

@@ -1,7 +1,7 @@
+import { Paths } from "@constants/paths";
 import { ReactNode } from "react";
 import { useNavigate } from "react-router-dom";
 
-import { Paths } from "../../constants/paths";
 import { ImageHandler } from "../imageHandler";
 import styles from "./index.module.css";
 

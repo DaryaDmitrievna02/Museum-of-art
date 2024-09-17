@@ -1,4 +1,4 @@
-import { Artworks } from "../utils/types";
+import { Artworks } from "@utils/types";
 
 export const getArtwork = async (ID: string): Promise<Artworks> => {
   try {
@@ -16,4 +16,3 @@ export const getArtwork = async (ID: string): Promise<Artworks> => {
     throw error;
   }
 };
-

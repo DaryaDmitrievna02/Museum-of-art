@@ -1,18 +1,18 @@
+import { getResult } from "@api/getResult";
+import { ArtworkCard } from "@components/artworkCard";
+import { CardsLayout } from "@components/cardsLayout";
+import { CustomButton } from "@components/customButton";
+import { ImgWithDescription } from "@components/imgWithDescription";
+import { Layout } from "@components/Layout";
+import { Loading } from "@components/loading";
+import { NotFoundMessage } from "@components/notFoundMessage";
+import { Pagination } from "@components/pagination";
+import { SearchForm } from "@components/search-form";
+import { Topic } from "@components/topics";
+import { useDebounce } from "@utils/customHooks/useDebounce";
+import { Artworks } from "@utils/types";
 import { useEffect, useState } from "react";
 
-import { getResult } from "../../api/getResult";
-import { ArtworkCard } from "../../components/artworkCard";
-import { CardsLayout } from "../../components/cardsLayout";
-import { CustomButton } from "../../components/customButton";
-import { ImgWithDescription } from "../../components/imgWithDescription";
-import { Layout } from "../../components/Layout";
-import { Loading } from "../../components/loading";
-import { NotFoundMessage } from "../../components/notFoundMessage";
-import { Pagination } from "../../components/pagination";
-import { SearchForm } from "../../components/search-form";
-import { Topic } from "../../components/topics";
-import { useDebounce } from "../../utils/customHooks/useDebounce";
-import { Artworks } from "../../utils/types";
 import styles from "./index.module.css";
 
 export const Home = () => {

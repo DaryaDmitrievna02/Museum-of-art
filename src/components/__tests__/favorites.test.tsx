@@ -1,14 +1,13 @@
 import "@testing-library/jest-dom";
 
+import { getFavorites } from "@api/getFavorites";
+import { Favorites } from "@pages/favorites/index";
 import { render, screen, waitFor } from "@testing-library/react";
+import { getSessionStorage } from "@utils/sessionStorage/getSessionStorage";
 import { MemoryRouter } from "react-router-dom";
 
-import { getFavorites } from "../../api/getFavorites";
-import { Favorites } from "../../pages/favorites/index";
-import { getSessionStorage } from "../../utils/sessionStorage/getSessionStorage";
-
-jest.mock("../../utils/getFavorites");
-jest.mock("../../utils/sessionStorage/getSessionStorage");
+jest.mock("@utils/getFavorites");
+jest.mock("@utils/sessionStorage/getSessionStorage");
 
 describe("Favorites Component", () => {
   beforeEach(() => {
@@ -63,4 +62,3 @@ describe("Favorites Component", () => {
     });
   });
 });
-

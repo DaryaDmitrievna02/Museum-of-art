@@ -23,6 +23,7 @@
 
 .secondTitle span:last-child {
     font-size: var(--font-size-default);
+    font-weight: var(--font-weight-bold);
 }
 
 .highlight {
