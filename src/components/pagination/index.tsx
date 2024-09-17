@@ -1,5 +1,3 @@
-import React from "react";
-
 import styles from "./index.module.css";
 
 type Props = {
@@ -9,7 +7,7 @@ type Props = {
   setCurrentPage: (currentPage: number) => void;
 };
 
-const PaginationComponent = ({
+export const Pagination = ({
   totalPages,
   visiblePages,
   currentPage,
@@ -74,4 +72,3 @@ const PaginationComponent = ({
   );
 };
 
-export const Pagination = React.memo(PaginationComponent);
