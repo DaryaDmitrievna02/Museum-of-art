@@ -26,16 +26,46 @@ export const Home = () => {
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [totalPages, setTotalPages] = useState<number>(1);
 
+  const [isSort, setIsSort] = useState<boolean>(false);
+
   const [loading, setLoading] = useState<boolean>(true);
 
   const debounced = useDebounce(query, 500);
 
+  const parseDate = (dateString: string): Date => {
+    // eslint-disable-next-line no-useless-escape
+    const parts = dateString.split(/[\s\/\-–]/);
+    const year = parts[0];
+    const month = parts[1] || "01";
+    const day = parts[2] || "01";
+    return new Date(`${year}-${month}-${day}`);
+  };
+
+  const sortArtworks = (artworks: Artworks): Artworks => {
+    const sortedData = [...artworks.data].sort((a, b) => {
+      const dateA = parseDate(a.date_display || "");
+      const dateB = parseDate(b.date_display || "");
+
+      return dateB.getTime() - dateA.getTime();
+    });
+
+    return {
+      ...artworks,
+      data: sortedData,
+    };
+  };
+
   const fetchResults = async (query: string, currentPage: number) => {
     try {
       setLoading(true);
+
       const result = await getResult(query, currentPage, 9);
       setResults(result);
       setTotalPages(result.pagination.total_pages);
+
+      if (isSort && query) {
+        setResults(sortArtworks(result));
+      }
     } catch (err) {
       if (err instanceof Error) {
         setError(err.message);
@@ -67,7 +97,7 @@ export const Home = () => {
     } else {
       setResults(undefined);
     }
-  }, [debounced, currentPage]);
+  }, [debounced, currentPage, isSort]);
 
   useEffect(() => {
     setCurrentPage(1);
@@ -87,7 +117,11 @@ export const Home = () => {
             <span className={styles.here}>Here!</span>
           </h1>
 
-          <SearchForm query={query} setQuery={setQuery}></SearchForm>
+          <SearchForm
+            setIsSort={setIsSort}
+            query={query}
+            setQuery={setQuery}
+          ></SearchForm>
 
           {loading && query ? (
             <Loading></Loading>
