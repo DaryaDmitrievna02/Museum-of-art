@@ -1,9 +1,9 @@
 import "@testing-library/jest-dom";
 
-import { fireEvent,render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 
 import { getSessionStorage } from "../../utils/sessionStorage/getSessionStorage";
-import { Bookmark } from "./index";
+import { Bookmark } from "../bookmark/index";
 
 jest.mock("../../utils/sessionStorage/getSessionStorage", () => ({
   getSessionStorage: jest.fn(),
@@ -40,3 +40,4 @@ describe("Bookmark Component", () => {
     expect(button).toHaveAttribute("data-active", "false");
   });
 });
+

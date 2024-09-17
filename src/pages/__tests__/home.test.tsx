@@ -1,10 +1,10 @@
 import "@testing-library/jest-dom";
 
-import { fireEvent,render, screen, waitFor } from "@testing-library/react";
+import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 
 import { getResult } from "../../utils/getResult";
-import { Home } from "./index";
+import { Home } from "../home/index";
 
 jest.mock("../../utils/getResult", () => ({
   getResult: jest.fn(),

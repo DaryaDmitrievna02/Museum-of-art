@@ -1,9 +1,9 @@
 import "@testing-library/jest-dom";
 
-import { fireEvent,render, screen } from "@testing-library/react";
-import { BrowserRouter } from "react-router-dom"; // Оборачиваем в Router для корректной работы Link
+import { fireEvent, render, screen } from "@testing-library/react";
+import { BrowserRouter } from "react-router-dom";
 
-import { BurgerMenu } from "./index"; // Импортируем компонент
+import { BurgerMenu } from "../burger-menu/index";
 
 const mockUseBurger = jest.fn();
 
@@ -51,3 +51,4 @@ describe("BurgerMenu Component", () => {
     expect(toggleMenu).toHaveBeenCalled();
   });
 });
+

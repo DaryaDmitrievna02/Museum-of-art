@@ -1,8 +1,8 @@
 import "@testing-library/jest-dom";
 
-import { fireEvent,render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 
-import { SearchForm } from "./index";
+import { SearchForm } from "../search-form/index";
 
 describe("SearchForm", () => {
   it("should display the passed value", () => {

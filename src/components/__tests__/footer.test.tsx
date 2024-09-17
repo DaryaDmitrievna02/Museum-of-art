@@ -1,16 +1,14 @@
 import "@testing-library/jest-dom";
 
-import { fireEvent,render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import { useNavigate } from "react-router-dom";
 
 import { Paths } from "../../constants/paths";
-import { Footer } from "./index";
-
+import { Footer } from "../footer/index";
 
 jest.mock("react-router-dom", () => ({
   useNavigate: jest.fn(),
 }));
-
 
 jest.mock("../../assets/museumLogo2.svg", () => "mockMuseumLogo");
 jest.mock("../../assets/modsenLogo.svg", () => "mockModsenLogo");
@@ -27,8 +25,8 @@ describe("Footer Component", () => {
   });
 
   it("navigates to home when the museum logo is clicked", () => {
-    const mockNavigate = jest.fn(); 
-    (useNavigate as jest.Mock).mockReturnValue(mockNavigate); 
+    const mockNavigate = jest.fn();
+    (useNavigate as jest.Mock).mockReturnValue(mockNavigate);
 
     render(<Footer />);
 
@@ -39,3 +37,4 @@ describe("Footer Component", () => {
     expect(mockNavigate).toHaveBeenCalledWith(Paths.home);
   });
 });
+
