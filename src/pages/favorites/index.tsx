@@ -1,20 +1,20 @@
+import { getFavorites } from "@api/getFavorites";
+import bookmark from "@assets/bookmark.svg";
+import { ArtworkCard } from "@components/artworkCard";
+import { CardsLayout } from "@components/cardsLayout";
+import { Layout } from "@components/Layout";
+import { Loading } from "@components/loading";
+import { Paths } from "@constants/paths";
+import { bookmarkStorageService } from "@utils/sessionStorage/getSessionStorage";
+import { Artworks } from "@utils/types";
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-import { getFavorites } from "../../api/getFavorites";
-import bookmark from "../../assets/bookmark.svg";
-import { ArtworkCard } from "../../components/artworkCard";
-import { CardsLayout } from "../../components/cardsLayout";
-import { Layout } from "../../components/Layout";
-import { Loading } from "../../components/loading";
-import { Paths } from "../../constants/paths";
-import { getSessionStorage } from "../../utils/sessionStorage/getSessionStorage";
-import { Artworks } from "../../utils/types";
 import styles from "./index.module.css";
 
 export const Favorites = () => {
   const [favorites, setFavorites] = useState<Artworks | undefined>();
-  const [storage, setStorage] = useState(getSessionStorage());
+  const [storage, setStorage] = useState(bookmarkStorageService.getBookmarks());
   const [loading, setLoading] = useState<boolean>(true);
 
   const navigate = useNavigate();
@@ -32,7 +32,7 @@ export const Favorites = () => {
   useEffect(() => {
     const updateFavorites = async () => {
       try {
-        const IDs = getSessionStorage().join(",");
+        const IDs = bookmarkStorageService.getBookmarks().join(",");
         setLoading(true);
         const result = await getFavorites<Artworks>(IDs);
         setFavorites(result);
@@ -44,7 +44,7 @@ export const Favorites = () => {
     };
 
     window.addEventListener("bookmarks-updated", () =>
-      setStorage(getSessionStorage()),
+      setStorage(bookmarkStorageService.getBookmarks()),
     );
     if (storage.length != 0) {
       updateFavorites();
@@ -52,7 +52,7 @@ export const Favorites = () => {
 
     return () => {
       window.removeEventListener("bookmarks-updated", () =>
-        setStorage(getSessionStorage()),
+        setStorage(bookmarkStorageService.getBookmarks()),
       );
     };
   }, []);
@@ -103,4 +103,3 @@ export const Favorites = () => {
     </>
   );
 };
-

@@ -1,5 +1,5 @@
 import bookmark from "@assets/bookmark.svg";
-import { getSessionStorage } from "@utils/sessionStorage/getSessionStorage";
+import { bookmarkStorageService } from "@utils/sessionStorage/getSessionStorage";
 import { useState } from "react";
 
 import styles from "./index.module.css";
@@ -10,24 +10,17 @@ type Props = {
 
 export const Bookmark = ({ id }: Props) => {
   const [bookmarkActive, isBookmarkActive] = useState<boolean>(() => {
-    return getSessionStorage().includes(id) ? true : false;
+    return bookmarkStorageService.getBookmarks().includes(id) ? true : false;
   });
 
   const handleBookmark = (id: number) => {
-    let bookmarks = getSessionStorage();
-
-    if (bookmarks.includes(id)) {
-      bookmarks = bookmarks.filter((item: number) => item != id);
-
+    if (bookmarkStorageService.getBookmarks().includes(id)) {
+      bookmarkStorageService.removeBookmark(id);
       isBookmarkActive(false);
     } else {
       isBookmarkActive(true);
-
-      bookmarks.push(id);
+      bookmarkStorageService.addBookmark(id);
     }
-
-    sessionStorage.setItem("bookmarks", JSON.stringify(bookmarks));
-    window.dispatchEvent(new Event("bookmarks-updated"));
   };
 
   return (
