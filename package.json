@@ -8,7 +8,8 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "test": "jest",
-    "lint": "eslint --fix .",
+    "lint": "eslint .",
+    "lint fix": "eslint --fix .",
     "preview": "vite preview",
     "deploy": "yarn build && gh-pages -d dist",
     "prepare": "husky"
