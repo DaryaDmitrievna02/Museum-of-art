@@ -92,7 +92,11 @@ export const Home = () => {
           {loading && query ? (
             <Loading></Loading>
           ) : !results?.data.length ? (
-            query && <span>The search for “{query}” returned 0 items.</span>
+            query && (
+              <span style={{ wordBreak: "break-word", textAlign: "center" }}>
+                The search for “{query}” returned 0 items.
+              </span>
+            )
           ) : (
             <>
               <CardsLayout>
@@ -102,6 +106,7 @@ export const Home = () => {
                       <ImgWithDescription
                         key={result.id}
                         props={result.image_id || ""}
+                        id={result.id}
                       >
                         <ArtworkCard
                           key={result.id}
@@ -168,4 +173,3 @@ export const Home = () => {
     </Layout>
   );
 };
-
