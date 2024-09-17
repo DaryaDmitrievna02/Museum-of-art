@@ -29,7 +29,7 @@ const router = createBrowserRouter(
       element: <ErrorPage></ErrorPage>,
     },
   ],
-  { basename: "/Museum-of-art/" },
+  // { basename: "/Museum-of-art/" },
 );
 
 createRoot(document.getElementById("root")!).render(

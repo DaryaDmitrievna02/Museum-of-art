@@ -5,3 +5,4 @@ export const getFavorites = async (IDs: string): Promise<Artworks> => {
   const data = res.json();
   return data;
 };
+

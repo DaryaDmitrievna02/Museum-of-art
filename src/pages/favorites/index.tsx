@@ -6,7 +6,7 @@ import { Artworks } from "../../utils/types";
 import { ArtworkCard } from "../../components/artworkCard";
 import { CardsLayout } from "../../components/cardsLayout";
 import { Paths } from "../../constants/paths";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import bookmark from "../../assets/bookmark.svg";
 
 import styles from "./index.module.css";
@@ -16,6 +16,8 @@ export const Favorites = () => {
   const [favorites, setFavorites] = useState<Artworks | undefined>();
   const [storage, setStorage] = useState(getSessionStorage());
   const [loading, setLoading] = useState<boolean>(true);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     setFavorites(prev => {
@@ -34,6 +36,10 @@ export const Favorites = () => {
       getFavorites(IDs)
         .then(result => {
           setFavorites(result);
+        })
+        .catch(err => {
+          console.error(err.message);
+          navigate(Paths.notFound);
         })
         .finally(() => {
           setLoading(false);
@@ -100,3 +106,4 @@ export const Favorites = () => {
     </>
   );
 };
+
