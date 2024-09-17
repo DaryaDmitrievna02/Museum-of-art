@@ -7,15 +7,19 @@ import { useBurger } from "../../utils/customHooks/useBurger";
 import styles from "./index.module.css";
 
 export const BurgerMenu = () => {
-  const { isOpen, toggleMenu } = useBurger();
+  const { isOpen, toggleMenu, menuRef, toggleRef } = useBurger();
 
   return (
     <div className={styles.burger}>
-      <button onClick={toggleMenu} className={styles.burgerButton}>
+      <button
+        ref={toggleRef}
+        onClick={toggleMenu}
+        className={styles.burgerButton}
+      >
         ☰
       </button>
       {isOpen && (
-        <div className={styles.menu}>
+        <div className={styles.menu} ref={menuRef}>
           <ul>
             <Link to={Paths.home}>
               <div className={styles.link}>
