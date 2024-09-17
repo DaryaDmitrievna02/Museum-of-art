@@ -6,7 +6,7 @@ import { BrowserRouter } from "react-router-dom";
 
 import { Topic } from "../topics/index";
 
-jest.mock("../../utils/getResult", () => ({
+jest.mock("@api/getResult", () => ({
   getResult: jest.fn(),
 }));
 

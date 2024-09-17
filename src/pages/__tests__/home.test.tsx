@@ -6,7 +6,7 @@ import { MemoryRouter } from "react-router-dom";
 import { getResult } from "../../api/getResult";
 import { Home } from "../home/index";
 
-jest.mock("../../utils/getResult", () => ({
+jest.mock("../../api/getResult", () => ({
   getResult: jest.fn(),
 }));
 
@@ -70,4 +70,3 @@ describe("Home Component", () => {
     });
   });
 });
-

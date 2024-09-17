@@ -3,15 +3,18 @@ import "@testing-library/jest-dom";
 import { getFavorites } from "@api/getFavorites";
 import { Favorites } from "@pages/favorites/index";
 import { render, screen, waitFor } from "@testing-library/react";
-import { getSessionStorage } from "@utils/sessionStorage/getSessionStorage";
+import { bookmarkStorageService } from "@utils/sessionStorage/getSessionStorage";
 import { MemoryRouter } from "react-router-dom";
 
-jest.mock("@utils/getFavorites");
+jest.mock("@api/getFavorites");
 jest.mock("@utils/sessionStorage/getSessionStorage");
 
 describe("Favorites Component", () => {
   beforeEach(() => {
-    (getSessionStorage as jest.Mock).mockReturnValue(["1", "2"]);
+    (bookmarkStorageService.getBookmarks as jest.Mock).mockReturnValue([
+      "1",
+      "2",
+    ]);
 
     (getFavorites as jest.Mock).mockResolvedValue({
       data: [
@@ -49,7 +52,7 @@ describe("Favorites Component", () => {
   });
 
   it("should display 'It's empty here now' when there are no favorites", async () => {
-    (getSessionStorage as jest.Mock).mockReturnValue([]);
+    (bookmarkStorageService.getBookmarks as jest.Mock).mockReturnValue([]);
 
     render(
       <MemoryRouter>

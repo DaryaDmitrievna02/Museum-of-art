@@ -9,7 +9,13 @@ describe("SearchForm", () => {
     const mockSetQuery = jest.fn();
     const query = "Picasso";
 
-    render(<SearchForm query={query} setQuery={mockSetQuery} />);
+    render(
+      <SearchForm
+        setIsSort={() => false}
+        query={query}
+        setQuery={mockSetQuery}
+      />,
+    );
 
     const input = screen.getByPlaceholderText("Search art, artist, work...");
     expect(input).toHaveValue(query);
@@ -19,11 +25,16 @@ describe("SearchForm", () => {
     const mockSetQuery = jest.fn();
     const query = "Picasso";
 
-    render(<SearchForm query={query} setQuery={mockSetQuery} />);
+    render(
+      <SearchForm
+        setIsSort={() => false}
+        query={query}
+        setQuery={mockSetQuery}
+      />,
+    );
 
     const input = screen.getByPlaceholderText("Search art, artist, work...");
     fireEvent.change(input, { target: { value: "Van Gogh" } });
     expect(mockSetQuery).toHaveBeenCalledWith("Van Gogh");
   });
 });
-

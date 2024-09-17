@@ -1,42 +1,47 @@
 import "@testing-library/jest-dom";
 
 import { fireEvent, render, screen } from "@testing-library/react";
-import { getSessionStorage } from "@utils/sessionStorage/getSessionStorage";
+import { bookmarkStorageService } from "@utils/sessionStorage/getSessionStorage";
 
 import { Bookmark } from "../bookmark/index";
 
-jest.mock("../../utils/sessionStorage/getSessionStorage", () => ({
-  getSessionStorage: jest.fn(),
+jest.mock("@utils/sessionStorage/getSessionStorage", () => ({
+  bookmarkStorageService: {
+    getBookmarks: jest.fn(),
+    setBookmarks: jest.fn(),
+    addBookmark: jest.fn(),
+    removeBookmark: jest.fn(),
+    clearBookmarks: jest.fn(),
+    hasBookmarksLength: jest.fn(),
+  },
 }));
 
 describe("Bookmark Component", () => {
-  const mockGetSessionStorage = getSessionStorage as jest.Mock;
+  const mockGetBookmarks = bookmarkStorageService.getBookmarks as jest.Mock;
+  const mockAddBookmark = bookmarkStorageService.addBookmark as jest.Mock;
+  const mockRemoveBookmark = bookmarkStorageService.removeBookmark as jest.Mock;
 
   beforeEach(() => {
-    sessionStorage.clear();
+    jest.clearAllMocks();
   });
 
-  it("adds and removes bookmark on click", () => {
-    mockGetSessionStorage.mockReturnValue([]);
+  it("should correctly handle bookmark addition and removal", () => {
+    mockGetBookmarks.mockReturnValue([1, 2, 3]);
 
     render(<Bookmark id={1} />);
 
     const button = screen.getByTestId("btnBookmark");
 
-    fireEvent.click(button);
-
-    const bookmarks = JSON.parse(sessionStorage.getItem("bookmarks") || "[]");
-    expect(bookmarks).toContain(1);
-
     expect(button).toHaveAttribute("data-active", "true");
 
     fireEvent.click(button);
-
-    const updatedBookmarks = JSON.parse(
-      sessionStorage.getItem("bookmarks") || "[]",
-    );
-    expect(updatedBookmarks).not.toContain(1);
-
+    expect(mockRemoveBookmark).toHaveBeenCalledWith(1);
     expect(button).toHaveAttribute("data-active", "false");
+
+    mockGetBookmarks.mockReturnValue([]);
+
+    fireEvent.click(button);
+    expect(mockAddBookmark).toHaveBeenCalledWith(1);
+    expect(button).toHaveAttribute("data-active", "true");
   });
 });
