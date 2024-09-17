@@ -9,7 +9,7 @@ export const Footer = () => {
   const navigate = useNavigate();
 
   return (
-    <div className={styles.footer}>
+    <footer className={styles.footer}>
       <div className={styles.container}>
         <img
           onClick={() => navigate(Paths.home)}
@@ -20,6 +20,6 @@ export const Footer = () => {
           <img src={modsen} alt="Modsen" />
         </div>
       </div>
-    </div>
+    </footer>
   );
 };

@@ -12,7 +12,7 @@
     width: 100%;
 }
 
-.container > div {
+.container > section {
     cursor: pointer;
 }
 
@@ -21,11 +21,11 @@
     max-width: 100%;
 }
 
-.containerWithInner > div {
+.containerWithInner > section {
     display: flex;
 }
 
-.container > div > img:first-child {
+.container > section > img:first-child {
     width: 80px;
     height: 80px;
     object-fit: cover;

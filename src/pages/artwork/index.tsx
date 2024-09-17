@@ -50,15 +50,15 @@ export const ArtworkDetails = () => {
         ) : !artwork ? (
           <NotFoundMessage error="" />
         ) : (
-          <section className={styles.container}>
-            <div className={styles.img_container}>
+          <main className={styles.container}>
+            <section className={styles.img_container}>
               {artwork.image_id && <ImageHandler ImgID={artwork.image_id} />}
               <div className={styles.bookmark}>
                 <Bookmark id={artwork.id} />
               </div>
-            </div>
+            </section>
 
-            <div className={`${styles.article} ${styles.bold}`}>
+            <article className={`${styles.article} ${styles.bold}`}>
               <div className={styles.title}>
                 <h1>{artwork.title}</h1>
                 <h2>
@@ -69,7 +69,7 @@ export const ArtworkDetails = () => {
                 <span>{artwork.date_display?.replace("/", "-")}</span>
               </div>
 
-              <div className={styles.overview}>
+              <section className={styles.overview}>
                 <h1>Overview</h1>
                 <p>
                   <span className={styles.highlight}>Artist nacionality:</span>{" "}
@@ -87,9 +87,9 @@ export const ArtworkDetails = () => {
                   {artwork.gallery_title ? artwork.gallery_title : "-"}
                   <br />
                 </p>
-              </div>
-            </div>
-          </section>
+              </section>
+            </article>
+          </main>
         )}
       </Layout>
     </>

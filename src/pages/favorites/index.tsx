@@ -64,7 +64,7 @@ export const Favorites = () => {
 
         {!loading && favorites && (
           <>
-            <h1 className={styles.titleText}>
+            <h2 className={styles.titleText}>
               Here Are You
               <div className={styles.favorites}>
                 <img src={bookmark} alt="" />
@@ -72,7 +72,7 @@ export const Favorites = () => {
                   Favorites{" "}
                 </span>
               </div>
-            </h1>
+            </h2>
 
             <CardsLayout>
               {favorites?.data.map(result => {

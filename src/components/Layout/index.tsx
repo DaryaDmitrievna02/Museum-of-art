@@ -11,9 +11,10 @@ export const Layout = ({ children }: Props) => {
     <>
       <div className={styles.container}>
         <Header />
-        <div className={styles.main}>{children}</div>
+        <main className={styles.main}>{children}</main>
         <Footer></Footer>
       </div>
     </>
   );
 };
+

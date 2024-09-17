@@ -8,8 +8,9 @@ type Props = {
 
 export const CardsLayout = ({ children }: Props) => {
   return (
-    <div data-testid="cards-layout" className={styles.container}>
+    <article data-testid="cards-layout" className={styles.container}>
       {children}
-    </div>
+    </article>
   );
 };
+

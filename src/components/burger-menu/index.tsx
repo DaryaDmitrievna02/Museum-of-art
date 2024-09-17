@@ -19,7 +19,7 @@ export const BurgerMenu = () => {
         ☰
       </button>
       {isOpen && (
-        <div className={styles.menu} ref={menuRef}>
+        <nav className={styles.menu} ref={menuRef}>
           <ul>
             <Link to={Paths.home}>
               <div className={styles.link}>
@@ -36,7 +36,7 @@ export const BurgerMenu = () => {
               </div>
             </Link>
           </ul>
-        </div>
+        </nav>
       )}
     </div>
   );

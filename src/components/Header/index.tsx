@@ -10,7 +10,7 @@ export const Header = () => {
   const navigate = useNavigate();
 
   return (
-    <div className={styles.header}>
+    <header className={styles.header}>
       <div className={styles.container}>
         <img
           onClick={() => navigate(Paths.home)}
@@ -28,6 +28,6 @@ export const Header = () => {
 
         <BurgerMenu data-testid="burger"></BurgerMenu>
       </div>
-    </div>
+    </header>
   );
 };

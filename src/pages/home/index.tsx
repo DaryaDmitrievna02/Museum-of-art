@@ -172,20 +172,20 @@ export const Home = () => {
           )}
 
           <>
-            <h1 className={styles.secondTitle}>
+            <h2 className={styles.secondTitle}>
               <span>Topics for you</span>
               <br />
               <span>Our special gallery</span>
-            </h1>
+            </h2>
             <Topic></Topic>
           </>
 
           <>
-            <h1 className={styles.secondTitle}>
+            <h2 className={styles.secondTitle}>
               <span>Here some more</span>
               <br />
               <span>Other works for you</span>
-            </h1>
+            </h2>
 
             <CardsLayout>
               {staticResults?.data.map(result => {

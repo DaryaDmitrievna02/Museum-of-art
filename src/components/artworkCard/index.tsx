@@ -25,12 +25,12 @@ export const ArtworkCard = ({
 
   return (
     <>
-      <div
+      <article
         className={`${styles.container} ${
           innerImg && styles.containerWithInner
         }`}
       >
-        <div
+        <section
           onClick={() => navigate(`${Paths.artwork}/${id}`)}
           className={styles.about}
         >
@@ -40,9 +40,9 @@ export const ArtworkCard = ({
             <p className={styles.artist}>{artist_title}</p>
             <span>Public</span>
           </div>
-        </div>
+        </section>
         <Bookmark id={id}></Bookmark>
-      </div>
+      </article>
     </>
   );
 };

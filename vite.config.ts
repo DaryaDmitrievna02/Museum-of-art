@@ -16,5 +16,5 @@ export default defineConfig({
     },
   },
 
-  //base: "/Museum-of-art",
+  // base: "/Museum-of-art",
 });
