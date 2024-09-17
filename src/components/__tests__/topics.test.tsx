@@ -3,7 +3,7 @@ import "@testing-library/jest-dom";
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 
-import { getResult } from "../../utils/getResult";
+import { getResult } from "../../api/getResult";
 import { Topic } from "../topics/index";
 
 jest.mock("../../utils/getResult", () => ({

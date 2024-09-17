@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import { getResult } from "../../utils/getResult";
+import { getResult } from "../../api/getResult";
 import { Artworks } from "../../utils/types";
 import { ArtworkCard } from "../artworkCard";
 import { CardsLayout } from "../cardsLayout";
@@ -47,3 +47,4 @@ export const Topic = () => {
     </>
   );
 };
+

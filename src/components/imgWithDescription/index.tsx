@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 
-import { ImageHandler } from "../../utils/imageHandler";
+import { ImageHandler } from "../imageHandler";
 import styles from "./index.module.css";
 
 type Props = {
@@ -21,3 +21,4 @@ export const ImgWithDescription = ({ children, props }: Props) => {
     </>
   );
 };
+

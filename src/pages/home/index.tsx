@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 
+import { getResult } from "../../api/getResult";
 import { ArtworkCard } from "../../components/artworkCard";
 import { CardsLayout } from "../../components/cardsLayout";
 import { CustomButton } from "../../components/customButton";
@@ -10,7 +11,6 @@ import { Pagination } from "../../components/pagination";
 import { SearchForm } from "../../components/search-form";
 import { Topic } from "../../components/topics";
 import { useDebounce } from "../../utils/customHooks/useDebounce";
-import { getResult } from "../../utils/getResult";
 import { Artworks } from "../../utils/types";
 import styles from "./index.module.css";
 
@@ -138,3 +138,4 @@ export const Home = () => {
     </Layout>
   );
 };
+

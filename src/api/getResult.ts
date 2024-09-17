@@ -1,4 +1,4 @@
-import { Artworks } from "./types";
+import { Artworks } from "../utils/types";
 
 export const getResult = async (
   search: string,
@@ -11,11 +11,11 @@ export const getResult = async (
     );
     const data = res.json();
     return data;
-  } catch (error) {
-    console.error("Error fetching results:", error);
+  } catch {
     return {
       data: [],
       pagination: { total: 0, total_pages: 0, current_page: 0 },
     };
   }
 };
+

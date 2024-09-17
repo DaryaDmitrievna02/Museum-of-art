@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
+import { getArtwork } from "../../api/getArtwotk";
 import { Bookmark } from "../../components/bookmark";
+import { ImageHandler } from "../../components/imageHandler";
 import { Layout } from "../../components/Layout";
 import { Loading } from "../../components/loading";
 import { NotFoundMessage } from "../../components/notFoundMessage";
 import { nationalities } from "../../constants/nationalities";
-import { getArtwork } from "../../utils/getArtwotk";
-import { ImageHandler } from "../../utils/imageHandler";
 import { Artwork } from "../../utils/types";
 import styles from "./index.module.css";
 
@@ -92,3 +92,4 @@ export const ArtworkDetails = () => {
     </>
   );
 };
+

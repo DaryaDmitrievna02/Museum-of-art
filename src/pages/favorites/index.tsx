@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
+import { getFavorites } from "../../api/getFavorites";
 import bookmark from "../../assets/bookmark.svg";
 import { ArtworkCard } from "../../components/artworkCard";
 import { CardsLayout } from "../../components/cardsLayout";
 import { Layout } from "../../components/Layout";
 import { Loading } from "../../components/loading";
 import { Paths } from "../../constants/paths";
-import { getFavorites } from "../../utils/getFavorites";
 import { getSessionStorage } from "../../utils/sessionStorage/getSessionStorage";
 import { Artworks } from "../../utils/types";
 import styles from "./index.module.css";

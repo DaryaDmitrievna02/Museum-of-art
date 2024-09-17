@@ -2,8 +2,8 @@ import { useNavigate } from "react-router-dom";
 
 import bookmark from "../../assets/bookmark.svg";
 import { Paths } from "../../constants/paths";
-import { ImageHandler } from "../../utils/imageHandler";
 import { Bookmark } from "../bookmark";
+import { ImageHandler } from "../imageHandler";
 import styles from "./index.module.css";
 
 type Props = {
