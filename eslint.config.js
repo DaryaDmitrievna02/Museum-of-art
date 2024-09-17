@@ -23,6 +23,7 @@ export default [
       "!node_modules/mylibrary/",
       "dist/**/*",
       "**/__mocks__",
+      "commitlint.config.ts",
     ],
   },
 ];
