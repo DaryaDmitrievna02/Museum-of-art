@@ -1,19 +1,18 @@
 import { useEffect, useState } from "react";
-import { Layout } from "../../components/Layout";
-import { SearchForm } from "../../components/search-form";
 
-import { getResult } from "../../utils/getResult";
-import { Artworks } from "../../utils/types";
-import { useDebounce } from "../../utils/customHooks/useDebounce";
-import { Pagination } from "../../components/pagination";
 import { ArtworkCard } from "../../components/artworkCard";
 import { CardsLayout } from "../../components/cardsLayout";
-
-import styles from "./index.module.css";
 import { CustomButton } from "../../components/customButton";
 import { ImgWithDescription } from "../../components/imgWithDescription";
-import { Topic } from "../../components/topics";
+import { Layout } from "../../components/Layout";
 import { Loading } from "../../components/loading";
+import { Pagination } from "../../components/pagination";
+import { SearchForm } from "../../components/search-form";
+import { Topic } from "../../components/topics";
+import { useDebounce } from "../../utils/customHooks/useDebounce";
+import { getResult } from "../../utils/getResult";
+import { Artworks } from "../../utils/types";
+import styles from "./index.module.css";
 
 export const Home = () => {
   const [query, setQuery] = useState<string>("");

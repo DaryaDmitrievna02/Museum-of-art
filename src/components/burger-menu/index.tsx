@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
+
+import bookmark from "../../assets/bookmark.svg";
+import home from "../../assets/home.svg";
 import { Paths } from "../../constants/paths";
 import { useBurger } from "../../utils/customHooks/useBurger";
-import home from "../../assets/home.svg";
-import bookmark from "../../assets/bookmark.svg";
 import styles from "./index.module.css";
 
 export const BurgerMenu = () => {

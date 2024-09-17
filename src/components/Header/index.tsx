@@ -1,10 +1,10 @@
 import { useNavigate } from "react-router-dom";
-import { Paths } from "../../constants/paths";
 
-import styles from "./index.module.css";
-import logo from "../../assets/museumLogo.svg";
 import bookmark from "../../assets/bookmark.svg";
+import logo from "../../assets/museumLogo.svg";
+import { Paths } from "../../constants/paths";
 import { BurgerMenu } from "../burger-menu";
+import styles from "./index.module.css";
 
 export const Header = () => {
   const navigate = useNavigate();

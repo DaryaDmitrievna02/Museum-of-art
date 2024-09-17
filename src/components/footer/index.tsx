@@ -1,10 +1,9 @@
 import { useNavigate } from "react-router-dom";
 
-import styles from "./index.module.css";
-import logo from "../../assets/museumLogo2.svg";
 import modsen from "../../assets/modsenLogo.svg";
-
+import logo from "../../assets/museumLogo2.svg";
 import { Paths } from "../../constants/paths";
+import styles from "./index.module.css";
 
 export const Footer = () => {
   const navigate = useNavigate();

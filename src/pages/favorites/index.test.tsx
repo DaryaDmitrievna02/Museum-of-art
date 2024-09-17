@@ -1,9 +1,11 @@
-import { render, screen, waitFor } from "@testing-library/react";
-import { Favorites } from "./index";
 import "@testing-library/jest-dom";
+
+import { render, screen, waitFor } from "@testing-library/react";
+import { MemoryRouter } from "react-router-dom";
+
 import { getFavorites } from "../../utils/getFavorites";
 import { getSessionStorage } from "../../utils/sessionStorage/getSessionStorage";
-import { MemoryRouter } from "react-router-dom";
+import { Favorites } from "./index";
 
 jest.mock("../../utils/getFavorites");
 jest.mock("../../utils/sessionStorage/getSessionStorage");

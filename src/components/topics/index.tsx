@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
-import { Artworks } from "../../utils/types";
+
 import { getResult } from "../../utils/getResult";
+import { Artworks } from "../../utils/types";
+import { ArtworkCard } from "../artworkCard";
 import { CardsLayout } from "../cardsLayout";
 import { ImgWithDescription } from "../imgWithDescription";
-import { ArtworkCard } from "../artworkCard";
 import { Pagination } from "../pagination";
 
 export const Topic = () => {

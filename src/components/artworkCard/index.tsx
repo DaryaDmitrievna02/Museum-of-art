@@ -1,10 +1,10 @@
-import styles from "./index.module.css";
 import { useNavigate } from "react-router-dom";
-import { Paths } from "../../constants/paths";
-import { Bookmark } from "../bookmark";
 
 import bookmark from "../../assets/bookmark.svg";
+import { Paths } from "../../constants/paths";
 import { ImageHandler } from "../../utils/imageHandler";
+import { Bookmark } from "../bookmark";
+import styles from "./index.module.css";
 
 type Props = {
   innerImg?: boolean;
@@ -46,3 +46,4 @@ export const ArtworkCard = ({
     </>
   );
 };
+

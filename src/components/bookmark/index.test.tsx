@@ -1,7 +1,9 @@
-import { render, screen, fireEvent } from "@testing-library/react";
-import { Bookmark } from "./index";
 import "@testing-library/jest-dom";
+
+import { fireEvent,render, screen } from "@testing-library/react";
+
 import { getSessionStorage } from "../../utils/sessionStorage/getSessionStorage";
+import { Bookmark } from "./index";
 
 jest.mock("../../utils/sessionStorage/getSessionStorage", () => ({
   getSessionStorage: jest.fn(),

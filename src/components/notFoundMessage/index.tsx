@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 
-import styles from "./index.module.css";
 import { Paths } from "../../constants/paths";
+import styles from "./index.module.css";
 
 export const NotFoundMessage = () => {
   const navigate = useNavigate();

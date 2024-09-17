@@ -1,8 +1,10 @@
-import { render, screen, waitFor, fireEvent } from "@testing-library/react";
-import { Topic } from "./index";
-import { BrowserRouter } from "react-router-dom";
-import { getResult } from "../../utils/getResult";
 import "@testing-library/jest-dom";
+
+import { fireEvent,render, screen, waitFor } from "@testing-library/react";
+import { BrowserRouter } from "react-router-dom";
+
+import { getResult } from "../../utils/getResult";
+import { Topic } from "./index";
 
 jest.mock("../../utils/getResult", () => ({
   getResult: jest.fn(),

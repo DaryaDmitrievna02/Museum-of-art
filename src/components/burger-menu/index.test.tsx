@@ -1,7 +1,9 @@
-import { render, screen, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import { BurgerMenu } from "./index"; // Импортируем компонент
+
+import { fireEvent,render, screen } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom"; // Оборачиваем в Router для корректной работы Link
+
+import { BurgerMenu } from "./index"; // Импортируем компонент
 
 const mockUseBurger = jest.fn();
 

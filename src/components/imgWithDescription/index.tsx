@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 
-import styles from "./index.module.css";
 import { ImageHandler } from "../../utils/imageHandler";
+import styles from "./index.module.css";
 
 type Props = {
   children: ReactNode;

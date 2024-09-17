@@ -1,8 +1,10 @@
-import { render, screen, fireEvent } from "@testing-library/react";
-import { Footer } from "./index";
-import { useNavigate } from "react-router-dom";
 import "@testing-library/jest-dom";
+
+import { fireEvent,render, screen } from "@testing-library/react";
+import { useNavigate } from "react-router-dom";
+
 import { Paths } from "../../constants/paths";
+import { Footer } from "./index";
 
 
 jest.mock("react-router-dom", () => ({

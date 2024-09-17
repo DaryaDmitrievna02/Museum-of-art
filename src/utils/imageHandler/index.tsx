@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { Loading } from "../../components/loading";
+
 import span from "../../assets/span.svg";
+import { Loading } from "../../components/loading";
 
 type Props = {
   ImgID: string;

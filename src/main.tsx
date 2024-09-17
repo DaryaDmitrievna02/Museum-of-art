@@ -1,14 +1,14 @@
+import "./index.css";
+
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import { Paths } from "./constants/paths";
-import { Home } from "./pages/home";
-import { Favorites } from "./pages/favorites";
-
-import "./index.css";
 import { ArtworkDetails } from "./pages/artwork";
 import { ErrorPage } from "./pages/errorPage";
+import { Favorites } from "./pages/favorites";
+import { Home } from "./pages/home";
 
 const router = createBrowserRouter(
   [
